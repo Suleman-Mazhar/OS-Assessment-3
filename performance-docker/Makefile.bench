@@ -1,0 +1,6 @@
+CC      = gcc
+CFLAGS  = -O2 -I/lapack-3.12.1/LAPACKE/include
+LDFLAGS = -L/lapack-3.12.1 -llapacke -llapack -lrefblas -lgfortran -lm
+
+benchmark: benchmark.c
+        $(CC) $(CFLAGS) benchmark.c -o benchmark $(LDFLAGS)
